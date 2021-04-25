@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\rpgrt\source\repos\122Tetris\122Tetris\main.cpp(9,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\rpgrt\source\repos\122Tetris\122Tetris\main.cpp(12,18): warning C4244: 'initializing': conversion from 'double' to 'time_t', possible loss of data
+C:\Users\rpgrt\source\repos\122Tetris\122Tetris\main.cpp(91,28): warning C4244: '+=': conversion from 'double' to 'time_t', possible loss of data
+  122Tetris.vcxproj -> C:\Users\rpgrt\source\repos\122Tetris\Debug\122Tetris.exe
