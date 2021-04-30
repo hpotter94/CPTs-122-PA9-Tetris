@@ -1,42 +1,29 @@
 #include <SFML/Graphics.hpp>
-#include "Block.h"
+#include <SFML/Audio.hpp>
+#include "Tetris.h"
 
 int main()
 {
 	int p = 0; 
-	sf::RenderWindow window(sf::VideoMode(500, 750), "Tetris Rip-Off");
+	sf::RenderWindow window(sf::VideoMode(512, 750), "Tetris Rip-Off");
+
+	///music///
+	sf::Music music;
+	if (!music.openFromFile("music.ogg"))
+		return -1; // error
+	music.setVolume(10); //10% max volume.  
+	music.play();	
+	///End of Music///
+
 
 	srand(time(0));
 
 	double dropInterval = 1;
 	time_t nextDrop = time(0) + dropInterval;
 
-	Block block; //This should probably be in a function of some kind
-	int rand_block = rand() % 7;
-	switch(rand_block)
-	{
-	case 0:
-		block = IBlock(bStart);
-		break;
-	case 1:
-		block = JBlock(bStart);
-		break;
-	case 2:
-		block = LBlock(bStart);
-		break;
-	case 3:
-		block = SBlock(bStart);
-		break;
-	case 4:
-		block = ZBlock(bStart);
-		break;
-	case 5:
-		block = TBlock(bStart);
-		break;
-	case 6:
-		block = OBlock(bStart);
-		break;
-	}
+	Block block;
+	
+	randomBlock(block);
 
 	int release_key = 1;
 
