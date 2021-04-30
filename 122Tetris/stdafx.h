@@ -9,3 +9,4 @@
 #include <map>
 #include <iostream>
 #include <cassert>
+#pragma once

@@ -47,7 +47,7 @@ void swapBlock(Block& block, Block& previewBlock)
 	previewBlock = tempBlock; //Changes the preview block into what the active block was
 }
 
-bool canMoveDown(Block block, Board board)
-{
-
-}
+//bool canMoveDown(Block block, Board board)
+//{
+//
+//}

@@ -57,6 +57,7 @@ void Block::setPosition(int X, int Y)
 {
 	central_block.setPosition(sf::Vector2f(X, Y));
 }
+
 void Block::draw(sf::RenderWindow& window) //Draw the block
 {
 	window.draw(central_block);
@@ -65,5 +66,29 @@ void Block::draw(sf::RenderWindow& window) //Draw the block
 		Square r = central_block;
 		r.setPosition(sf::Vector2f(30 * side_block[i][0], 30 * side_block[i][1]) + central_block.getPosition());
 		window.draw(r);
+	}
+}
+
+int Block::getX(int number)
+{
+	if (number >= 0 || number <= 2)
+	{
+		return central_coordinates[0] + side_block[number][0];
+	}
+	else
+	{
+		return central_coordinates[0];
+	}
+}
+
+int Block::getY(int number)
+{
+	if (number >= 0 || number <= 2)
+	{
+		return central_coordinates[1] + side_block[number][1];
+	}
+	else
+	{
+		return central_coordinates[1];
 	}
 }

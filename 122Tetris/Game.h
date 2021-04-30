@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
 
@@ -8,11 +9,17 @@ public:
 
 	static void Start();
 
+
+
 private:
 	static bool isExiting();
 	static void GameLoop();
 
-	enum GameState {Uninitialized, ShowingSplash, Paused, ShowingMenu, Playing, Exiting};
+
+	static void ShowSplashScreen(); // might exclude not testing now..
+	static void ShowMenu();
+
+	enum GameState { Uninitialized, ShowingSplash, Paused, ShowingMenu, Playing, Exiting }; //might take out ShowingSplash 
 
 	static GameState _gameState;
 	static sf::RenderWindow _mainWindow;

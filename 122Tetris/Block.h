@@ -1,20 +1,8 @@
-#include <SFML/Graphics.hpp>
+#include "Square.h"
 
-const sf::Vector2f bSize(30, 30); //Square size
 const sf::Vector2f bStart(200, 100); //Start Coordinates (Change Probably)
 const int start_x = 4;
 const int start_y = 0;
-
-class Square : public sf::RectangleShape //Create squre used for each Block
-{
-public:
-	Square() {}
-	Square(const sf::Vector2f& size, const sf::Vector2f& pos, const sf::Color& color) : sf::RectangleShape(size)
-	{
-		this->setFillColor(color);
-		this->setPosition(pos);
-	}
-};
 
 class Block //Each Block contains four squares
 {
@@ -26,7 +14,7 @@ public:
 	Block() {}
 	Block(const sf::Vector2f& size, const sf::Vector2f& position, const sf::Color& color)
 	{
-		Square newSquare(size, position, color);
+		Square newSquare(position, color);
 		central_block = newSquare;
 
 		side_block[0][0] = 0;
@@ -45,6 +33,8 @@ public:
 	void rotateL();
 	void moveR();
 	void moveL();
+	int getX(int number);
+	int getY(int number);
 	void setPosition(sf::Vector2f& position);
 	void setPosition(int X, int Y);
 	void draw(sf::RenderWindow& window);
